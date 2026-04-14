@@ -2,21 +2,19 @@
 import { darkTheme, GlobalTheme, NButton, NSpace, NCard } from "naive-ui";
 import { ref } from "vue";
 
-import { Theme, appTheme } from "./utils/theme";
+import { setAppTheme } from "./utils/theme";
 
-async function setTheme(newTheme: Theme) {
-  appTheme.value = newTheme
-}
+
 
 </script>
 
 <template>
     <n-space>
         <n-card>
-            <n-button @click="setTheme('dark')">
+            <n-button @click="setAppTheme('dark')">
                 深色
             </n-button>
-            <n-button @click="setTheme('light')">
+            <n-button @click="setAppTheme('light')">
                 浅色
             </n-button>
         </n-card>

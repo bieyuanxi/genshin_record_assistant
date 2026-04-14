@@ -1,5 +1,5 @@
 import { darkTheme, GlobalTheme } from "naive-ui";
-import { computed, onUnmounted, ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 import { store } from "./store";
 import { info } from "@tauri-apps/plugin-log";
 import { getCurrentWindow } from '@tauri-apps/api/window';
@@ -18,9 +18,8 @@ export const appTheme = ref<Theme>(null);
 
 export async function setAppTheme(theme: Theme) {
   appTheme.value = theme;
-  const win = getCurrentWindow();
-  // FIXME: use == or ===?
-  await win.setTheme((theme === null) ? null : theme);
+  // sync window theme
+  await getCurrentWindow().setTheme(theme);
 }
 
 // 监听系统主题
@@ -49,7 +48,7 @@ export const naiveUITheme = computed<GlobalTheme | null>(() => {
 
 watch(appTheme, async (newVal) => {
   // store theme
-  info(`saving theme: ${newVal}`);
+  info(`saving theme cfg: ${newVal}`);
   await store.set("theme", newVal);
   await store.save();
 });
