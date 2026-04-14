@@ -7,7 +7,13 @@ import { getCurrentWindow } from '@tauri-apps/api/window';
 // `null` => follow system theme
 export type Theme = "dark" | "light" | null;
 
-export const appTheme = ref(await store.get<Theme>("theme"));
+export const appTheme = ref<Theme>(null);
+
+{
+  // load theme cfg from store
+  const _theme = await store.get<Theme>("theme");
+  appTheme.value = (_theme === undefined) ? null : _theme;
+}
 
 
 export async function setAppTheme(theme: Theme) {
