@@ -7,7 +7,10 @@
     "npm:@tauri-apps/plugin-opener@2": "2.5.3",
     "npm:@tauri-apps/plugin-os@~2.3.2": "2.3.2",
     "npm:@tauri-apps/plugin-sql@2.4": "2.4.0",
+    "npm:@tauri-apps/plugin-store@~2.4.2": "2.4.2",
+    "npm:@vicons/ionicons5@0.13": "0.13.0",
     "npm:@vitejs/plugin-vue@^6.0.6": "6.0.6_vite@8.0.8_vue@3.5.32__typescript@6.0.2_typescript@6.0.2",
+    "npm:naive-ui@^2.44.1": "2.44.1_vue@3.5.32__typescript@6.0.2",
     "npm:typescript@~6.0.2": "6.0.2",
     "npm:vite@^8.0.8": "8.0.8",
     "npm:vue-tsc@^3.2.6": "3.2.6_typescript@6.0.2",
@@ -38,6 +41,20 @@
       ],
       "tarball": "https://registry.npmmirror.com/@babel/types/-/types-7.29.0.tgz"
     },
+    "@css-render/plugin-bem@0.15.14_css-render@0.15.14": {
+      "integrity": "sha512-QK513CJ7yEQxm/P3EwsI+d+ha8kSOcjGvD6SevM41neEMxdULE+18iuQK6tEChAWMOQNQPLG/Rw3Khb69r5neg==",
+      "dependencies": [
+        "css-render"
+      ],
+      "tarball": "https://registry.npmmirror.com/@css-render/plugin-bem/-/plugin-bem-0.15.14.tgz"
+    },
+    "@css-render/vue3-ssr@0.15.14_vue@3.5.32__typescript@6.0.2": {
+      "integrity": "sha512-//8027GSbxE9n3QlD73xFY6z4ZbHbvrOVB7AO6hsmrEzGbg+h2A09HboUyDgu+xsmj7JnvJD39Irt+2D0+iV8g==",
+      "dependencies": [
+        "vue"
+      ],
+      "tarball": "https://registry.npmmirror.com/@css-render/vue3-ssr/-/vue3-ssr-0.15.14.tgz"
+    },
     "@emnapi/core@1.9.2": {
       "integrity": "sha512-UC+ZhH3XtczQYfOlu3lNEkdW/p4dsJ1r/bP7H8+rhao3TTTMO1ATq/4DdIi23XuGoFY+Cz0JmCbdVl0hz9jZcA==",
       "dependencies": [
@@ -60,9 +77,17 @@
       ],
       "tarball": "https://registry.npmmirror.com/@emnapi/wasi-threads/-/wasi-threads-1.2.1.tgz"
     },
+    "@emotion/hash@0.8.0": {
+      "integrity": "sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==",
+      "tarball": "https://registry.npmmirror.com/@emotion/hash/-/hash-0.8.0.tgz"
+    },
     "@jridgewell/sourcemap-codec@1.5.5": {
       "integrity": "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==",
       "tarball": "https://registry.npmmirror.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz"
+    },
+    "@juggle/resize-observer@3.4.0": {
+      "integrity": "sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==",
+      "tarball": "https://registry.npmmirror.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz"
     },
     "@napi-rs/wasm-runtime@1.1.3_@emnapi+core@1.9.2_@emnapi+runtime@1.9.2": {
       "integrity": "sha512-xK9sGVbJWYb08+mTJt3/YV24WxvxpXcXtP6B172paPZ+Ts69Re9dAr7lKwJoeIx8OoeuimEiRZ7umkiUVClmmQ==",
@@ -295,12 +320,34 @@
       ],
       "tarball": "https://registry.npmmirror.com/@tauri-apps/plugin-sql/-/plugin-sql-2.4.0.tgz"
     },
+    "@tauri-apps/plugin-store@2.4.2": {
+      "integrity": "sha512-0ClHS50Oq9HEvLPhNzTNFxbWVOqoAp3dRvtewQBeqfIQ0z5m3JRnOISIn2ZVPCrQC0MyGyhTS9DWhHjpigQE7A==",
+      "dependencies": [
+        "@tauri-apps/api"
+      ],
+      "tarball": "https://registry.npmmirror.com/@tauri-apps/plugin-store/-/plugin-store-2.4.2.tgz"
+    },
     "@tybys/wasm-util@0.10.1": {
       "integrity": "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==",
       "dependencies": [
         "tslib"
       ],
       "tarball": "https://registry.npmmirror.com/@tybys/wasm-util/-/wasm-util-0.10.1.tgz"
+    },
+    "@types/lodash-es@4.17.12": {
+      "integrity": "sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==",
+      "dependencies": [
+        "@types/lodash"
+      ],
+      "tarball": "https://registry.npmmirror.com/@types/lodash-es/-/lodash-es-4.17.12.tgz"
+    },
+    "@types/lodash@4.17.24": {
+      "integrity": "sha512-gIW7lQLZbue7lRSWEFql49QJJWThrTFFeIMJdp3eH4tKoxm1OvEPg02rm4wCCSHS0cL3/Fizimb35b7k8atwsQ==",
+      "tarball": "https://registry.npmmirror.com/@types/lodash/-/lodash-4.17.24.tgz"
+    },
+    "@vicons/ionicons5@0.13.0": {
+      "integrity": "sha512-zvZKBPjEXKN7AXNo2Na2uy+nvuv6SP4KAMQxpKL2vfHMj0fSvuw7JZcOPCjQC3e7ayssKnaoFVAhbYcW6v41qQ==",
+      "tarball": "https://registry.npmmirror.com/@vicons/ionicons5/-/ionicons5-0.13.0.tgz"
     },
     "@vitejs/plugin-vue@6.0.6_vite@8.0.8_vue@3.5.32__typescript@6.0.2_typescript@6.0.2": {
       "integrity": "sha512-u9HHgfrq3AjXlysn0eINFnWQOJQLO9WN6VprZ8FXl7A2bYisv3Hui9Ij+7QZ41F/WYWarHjwBbXtD7dKg3uxbg==",
@@ -407,7 +454,7 @@
         "@vue/reactivity",
         "@vue/runtime-core",
         "@vue/shared",
-        "csstype"
+        "csstype@3.2.3"
       ],
       "tarball": "https://registry.npmmirror.com/@vue/runtime-dom/-/runtime-dom-3.5.32.tgz"
     },
@@ -428,9 +475,36 @@
       "integrity": "sha512-d9dYqZTS90WLiU0I5c6DHj/HcKkF8ZyGN3G5x8wSbslulz70KOxaqCT0hQCo9KOyhVqzqGojvNdJXoTumZOtcw==",
       "tarball": "https://registry.npmmirror.com/alien-signals/-/alien-signals-3.1.2.tgz"
     },
+    "async-validator@4.2.5": {
+      "integrity": "sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==",
+      "tarball": "https://registry.npmmirror.com/async-validator/-/async-validator-4.2.5.tgz"
+    },
+    "css-render@0.15.14": {
+      "integrity": "sha512-9nF4PdUle+5ta4W5SyZdLCCmFd37uVimSjg1evcTqKJCyvCEEj12WKzOSBNak6r4im4J4iYXKH1OWpUV5LBYFg==",
+      "dependencies": [
+        "@emotion/hash",
+        "csstype@3.0.11"
+      ],
+      "tarball": "https://registry.npmmirror.com/css-render/-/css-render-0.15.14.tgz"
+    },
+    "csstype@3.0.11": {
+      "integrity": "sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==",
+      "tarball": "https://registry.npmmirror.com/csstype/-/csstype-3.0.11.tgz"
+    },
     "csstype@3.2.3": {
       "integrity": "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==",
       "tarball": "https://registry.npmmirror.com/csstype/-/csstype-3.2.3.tgz"
+    },
+    "date-fns-tz@3.2.0_date-fns@4.1.0": {
+      "integrity": "sha512-sg8HqoTEulcbbbVXeg84u5UnlsQa8GS5QXMqjjYIhS4abEVVKIUwe0/l/UhrZdKaL/W5eWZNlbTeEIiOXTcsBQ==",
+      "dependencies": [
+        "date-fns"
+      ],
+      "tarball": "https://registry.npmmirror.com/date-fns-tz/-/date-fns-tz-3.2.0.tgz"
+    },
+    "date-fns@4.1.0": {
+      "integrity": "sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==",
+      "tarball": "https://registry.npmmirror.com/date-fns/-/date-fns-4.1.0.tgz"
     },
     "detect-libc@2.1.2": {
       "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
@@ -443,6 +517,10 @@
     "estree-walker@2.0.2": {
       "integrity": "sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==",
       "tarball": "https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz"
+    },
+    "evtd@0.2.4": {
+      "integrity": "sha512-qaeGN5bx63s/AXgQo8gj6fBkxge+OoLddLniox5qtLAEY5HSnuSlISXVPxnSae1dWblvTh4/HoMIB+mbMsvZzw==",
+      "tarball": "https://registry.npmmirror.com/evtd/-/evtd-0.2.4.tgz"
     },
     "fdir@6.5.0_picomatch@4.0.4": {
       "integrity": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==",
@@ -459,6 +537,10 @@
       "os": ["darwin"],
       "scripts": true,
       "tarball": "https://registry.npmmirror.com/fsevents/-/fsevents-2.3.3.tgz"
+    },
+    "highlight.js@11.11.1": {
+      "integrity": "sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==",
+      "tarball": "https://registry.npmmirror.com/highlight.js/-/highlight.js-11.11.1.tgz"
     },
     "lightningcss-android-arm64@1.32.0": {
       "integrity": "sha512-YK7/ClTt4kAK0vo6w3X+Pnm0D2cf2vPHbhOXdoNti1Ga0al1P4TBZhwjATvjNwLEBCnKvjJc2jQgHXH0NEwlAg==",
@@ -546,6 +628,14 @@
       ],
       "tarball": "https://registry.npmmirror.com/lightningcss/-/lightningcss-1.32.0.tgz"
     },
+    "lodash-es@4.18.1": {
+      "integrity": "sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==",
+      "tarball": "https://registry.npmmirror.com/lodash-es/-/lodash-es-4.18.1.tgz"
+    },
+    "lodash@4.18.1": {
+      "integrity": "sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==",
+      "tarball": "https://registry.npmmirror.com/lodash/-/lodash-4.18.1.tgz"
+    },
     "magic-string@0.30.21": {
       "integrity": "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==",
       "dependencies": [
@@ -556,6 +646,31 @@
     "muggle-string@0.4.1": {
       "integrity": "sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==",
       "tarball": "https://registry.npmmirror.com/muggle-string/-/muggle-string-0.4.1.tgz"
+    },
+    "naive-ui@2.44.1_vue@3.5.32__typescript@6.0.2": {
+      "integrity": "sha512-reo8Esw0p58liZwbUutC7meW24Xbn3EwNv91zReWKm2W4JPu+zfgJRn/F7aO0BFmvN+h2brA2M5lRvYqLq4kuA==",
+      "dependencies": [
+        "@css-render/plugin-bem",
+        "@css-render/vue3-ssr",
+        "@types/lodash",
+        "@types/lodash-es",
+        "async-validator",
+        "css-render",
+        "csstype@3.2.3",
+        "date-fns",
+        "date-fns-tz",
+        "evtd",
+        "highlight.js",
+        "lodash",
+        "lodash-es",
+        "seemly",
+        "treemate",
+        "vdirs",
+        "vooks",
+        "vue",
+        "vueuc"
+      ],
+      "tarball": "https://registry.npmmirror.com/naive-ui/-/naive-ui-2.44.1.tgz"
     },
     "nanoid@3.3.11": {
       "integrity": "sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==",
@@ -609,6 +724,10 @@
       "bin": true,
       "tarball": "https://registry.npmmirror.com/rolldown/-/rolldown-1.0.0-rc.15.tgz"
     },
+    "seemly@0.3.10": {
+      "integrity": "sha512-2+SMxtG1PcsL0uyhkumlOU6Qo9TAQ/WyH7tthnPIOQB05/12jz9naq6GZ6iZ6ApVsO3rr2gsnTf3++OV63kE1Q==",
+      "tarball": "https://registry.npmmirror.com/seemly/-/seemly-0.3.10.tgz"
+    },
     "source-map-js@1.2.1": {
       "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
       "tarball": "https://registry.npmmirror.com/source-map-js/-/source-map-js-1.2.1.tgz"
@@ -621,6 +740,10 @@
       ],
       "tarball": "https://registry.npmmirror.com/tinyglobby/-/tinyglobby-0.2.16.tgz"
     },
+    "treemate@0.3.11": {
+      "integrity": "sha512-M8RGFoKtZ8dF+iwJfAJTOH/SM4KluKOKRJpjCMhI8bG3qB74zrFoArKZ62ll0Fr3mqkMJiQOmWYkdYgDeITYQg==",
+      "tarball": "https://registry.npmmirror.com/treemate/-/treemate-0.3.11.tgz"
+    },
     "tslib@2.8.1": {
       "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
       "tarball": "https://registry.npmmirror.com/tslib/-/tslib-2.8.1.tgz"
@@ -629,6 +752,14 @@
       "integrity": "sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==",
       "bin": true,
       "tarball": "https://registry.npmmirror.com/typescript/-/typescript-6.0.2.tgz"
+    },
+    "vdirs@0.1.8_vue@3.5.32__typescript@6.0.2": {
+      "integrity": "sha512-H9V1zGRLQZg9b+GdMk8MXDN2Lva0zx72MPahDKc30v+DtwKjfyOSXWRIX4t2mhDubM1H09gPhWeth/BJWPHGUw==",
+      "dependencies": [
+        "evtd",
+        "vue"
+      ],
+      "tarball": "https://registry.npmmirror.com/vdirs/-/vdirs-0.1.8.tgz"
     },
     "vite@8.0.8": {
       "integrity": "sha512-dbU7/iLVa8KZALJyLOBOQ88nOXtNG8vxKuOT4I2mD+Ya70KPceF4IAmDsmU0h1Qsn5bPrvsY9HJstCRh3hG6Uw==",
@@ -644,6 +775,14 @@
       ],
       "bin": true,
       "tarball": "https://registry.npmmirror.com/vite/-/vite-8.0.8.tgz"
+    },
+    "vooks@0.2.12_vue@3.5.32__typescript@6.0.2": {
+      "integrity": "sha512-iox0I3RZzxtKlcgYaStQYKEzWWGAduMmq+jS7OrNdQo1FgGfPMubGL3uGHOU9n97NIvfFDBGnpSvkWyb/NSn/Q==",
+      "dependencies": [
+        "evtd",
+        "vue"
+      ],
+      "tarball": "https://registry.npmmirror.com/vooks/-/vooks-0.2.12.tgz"
     },
     "vscode-uri@3.1.0": {
       "integrity": "sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==",
@@ -673,6 +812,20 @@
         "typescript"
       ],
       "tarball": "https://registry.npmmirror.com/vue/-/vue-3.5.32.tgz"
+    },
+    "vueuc@0.4.65_vue@3.5.32__typescript@6.0.2": {
+      "integrity": "sha512-lXuMl+8gsBmruudfxnMF9HW4be8rFziylXFu1VHVNbLVhRTXXV4njvpRuJapD/8q+oFEMSfQMH16E/85VoWRyQ==",
+      "dependencies": [
+        "@css-render/vue3-ssr",
+        "@juggle/resize-observer",
+        "css-render",
+        "evtd",
+        "seemly",
+        "vdirs",
+        "vooks",
+        "vue"
+      ],
+      "tarball": "https://registry.npmmirror.com/vueuc/-/vueuc-0.4.65.tgz"
     }
   },
   "workspace": {
@@ -684,7 +837,10 @@
         "npm:@tauri-apps/plugin-opener@2",
         "npm:@tauri-apps/plugin-os@~2.3.2",
         "npm:@tauri-apps/plugin-sql@2.4",
+        "npm:@tauri-apps/plugin-store@~2.4.2",
+        "npm:@vicons/ionicons5@0.13",
         "npm:@vitejs/plugin-vue@^6.0.6",
+        "npm:naive-ui@^2.44.1",
         "npm:typescript@~6.0.2",
         "npm:vite@^8.0.8",
         "npm:vue-tsc@^3.2.6",

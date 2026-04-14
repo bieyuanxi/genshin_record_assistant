@@ -13,12 +13,15 @@
     "@tauri-apps/plugin-log": "~2.8.0",
     "@tauri-apps/plugin-os": "~2.3.2",
     "@tauri-apps/plugin-sql": "~2.4.0",
+    "@tauri-apps/plugin-store": "~2.4.2",
     "vue": "^3.5.13",
     "@tauri-apps/api": "^2",
     "@tauri-apps/plugin-opener": "^2"
   },
   "devDependencies": {
+    "@vicons/ionicons5": "^0.13.0",
     "@vitejs/plugin-vue": "^6.0.6",
+    "naive-ui": "^2.44.1",
     "typescript": "~6.0.2",
     "vite": "^8.0.8",
     "vue-tsc": "^3.2.6",
