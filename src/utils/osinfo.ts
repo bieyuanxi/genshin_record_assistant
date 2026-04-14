@@ -1,8 +1,15 @@
-import { platform, version, arch } from '@tauri-apps/plugin-os';
-import { info } from '@tauri-apps/plugin-log';
+import {
+  platform as getPlatform,
+  version as getVersion,
+  arch as getArch,
+} from "@tauri-apps/plugin-os";
 
+export const osInfo = await getOSInfo();
 
-export function print_os_info() {
-  info(`platform: ${platform()}, version: ${version()}, arch: ${arch()}`);
+export async function getOSInfo() {
+  const platform = getPlatform();
+  const version = getVersion();
+  const arch = getArch();
+
+  return { platform, version, arch };
 }
-

@@ -1,8 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 
-import { print_os_info as log_osinfo } from "./utils/osinfo"
+import { osInfo } from "./utils/osinfo";
+import { info } from "@tauri-apps/plugin-log";
 
-log_osinfo();
+info(`os info: ${osInfo.platform}, ${osInfo.arch}, ${osInfo.version}`);
 
 createApp(App).mount("#app");
