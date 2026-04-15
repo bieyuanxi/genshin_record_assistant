@@ -1,54 +1,52 @@
-import { darkTheme, GlobalTheme } from "naive-ui";
-import { computed, ref, watch } from "vue";
+import { ref, watch } from "vue";
 import { store } from "./store";
 import { info } from "@tauri-apps/plugin-log";
-import { getCurrentWindow } from '@tauri-apps/api/window';
+import { getCurrentWindow } from "@tauri-apps/api/window";
+import type { Theme } from "@tauri-apps/api/window";
 
 // `null` => follow system theme
-export type Theme = "dark" | "light" | null;
+export type AppTheme = Theme | null;
 
-export const appTheme = ref<Theme>(null);
+// app theme config
+export const appTheme = ref<AppTheme>(null);
+// real theme of the app
+export const windowTheme = ref<AppTheme>(null);
 
-{
-  // load theme cfg from store
-  const _theme = await store.get<Theme>("theme");
-  appTheme.value = (_theme === undefined) ? null : _theme;
+/**
+ * **make sure call this only once**
+ */
+export async function initTheme() {
+  // 初始化os主题状态
+  windowTheme.value = await getCurrentWindow().theme();
+  
+  // 读取用户保存的配置
+  const savedTheme = await store.get<AppTheme>("theme");
+  const useTheme = savedTheme ?? null; // 没有则为跟随系统
+  
+  await setAppTheme(useTheme);
+  
+  // 监听系统主题
+  await getCurrentWindow().onThemeChanged(({ payload: theme }) => {
+    info("system theme changed: " + theme);
+    windowTheme.value = theme;
+  });
+  
+  watch(appTheme, async (theme) => {
+    // store theme
+    info(`saving theme cfg: ${theme}`);
+    await store.set("theme", theme);
+    await store.save();
+  });
 }
 
-
-export async function setAppTheme(theme: Theme) {
-  appTheme.value = theme;
+/**
+ * Set theme of the App.
+ * @param theme 
+ */
+export async function setAppTheme(theme: AppTheme) {
   // sync window theme
   await getCurrentWindow().setTheme(theme);
+  appTheme.value = theme;
+  
+  info("set app theme: " + theme);
 }
-
-// 监听系统主题
-export async function watchOsTheme() {
-  const win = getCurrentWindow()
-  windowTheme.value = await win.theme()
-  return win.onThemeChanged(({ payload }) => {
-    windowTheme.value = payload
-  })
-}
-
-
-const unlisten = await getCurrentWindow().onThemeChanged(({ payload: theme }) => {
-  console.log('New theme: ' + theme);
-  info('New theme: ' + theme);
-  windowTheme.value = theme;
-});
-
-const windowTheme = ref(await getCurrentWindow().theme());
-
-export const naiveUITheme = computed<GlobalTheme | null>(() => {
-  const current = appTheme.value === null ? windowTheme.value : appTheme.value
-  return current === 'dark' ? darkTheme : null
-});
-
-
-watch(appTheme, async (newVal) => {
-  // store theme
-  info(`saving theme cfg: ${newVal}`);
-  await store.set("theme", newVal);
-  await store.save();
-});

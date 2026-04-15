@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import About from "./About.vue";
-import { NButton } from "naive-ui";
 import type { GlobalTheme } from "naive-ui";
 import {
     darkTheme,
@@ -8,13 +6,13 @@ import {
     NCard,
     NFlex,
     NLayout,
-    NLayoutHeader,
     NLayoutContent,
-    NLayoutFooter,
     NLayoutSider,
+    NIcon,
+    NMenu,
 } from "naive-ui";
-import { NIcon, NMenu } from "naive-ui";
-import { ref, h } from "vue";
+
+import { h, computed } from "vue";
 import type { Component } from "vue";
 import {
     BookOutline as BookIcon,
@@ -22,12 +20,16 @@ import {
     WineOutline as WineIcon,
 } from "@vicons/ionicons5";
 import Settings from "./Settings.vue";
-import { naiveUITheme } from "./utils/theme";
+import About from "./About.vue";
+import { windowTheme } from "./utils/theme";
 
 function renderIcon(icon: Component) {
     return () => h(NIcon, null, { default: () => h(icon) });
 }
 
+const naiveUITheme = computed<GlobalTheme | null>(() => {
+    return windowTheme.value === "dark" ? darkTheme : null;
+});
 
 const menuOptions = [
     {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { darkTheme, GlobalTheme, NButton, NSpace, NCard } from "naive-ui";
-import { ref } from "vue";
+import { NButton, NSpace, NCard } from "naive-ui";
+
 
 import { setAppTheme } from "./utils/theme";
 

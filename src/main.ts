@@ -3,7 +3,18 @@ import App from "./App.vue";
 
 import { osInfo } from "./utils/osinfo";
 import { info } from "@tauri-apps/plugin-log";
+import { initTheme } from "./utils/theme";
 
-info(`os info: ${osInfo.platform}, ${osInfo.arch}, ${osInfo.version}`);
 
-createApp(App).mount("#app");
+async function setup() {
+  // 初始化主题
+  await initTheme();
+
+  // 挂载应用
+  createApp(App).mount("#app");
+
+  info(`os info: ${osInfo.platform}, ${osInfo.arch}, ${osInfo.version}`);
+}
+
+
+setup();
