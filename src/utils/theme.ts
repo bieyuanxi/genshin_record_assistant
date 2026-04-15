@@ -3,6 +3,7 @@ import { store } from "./store";
 import { info } from "@tauri-apps/plugin-log";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import type { Theme } from "@tauri-apps/api/window";
+import { setTheme } from '@tauri-apps/api/app';
 
 // `null` => follow system theme
 export type AppTheme = Theme | null;
@@ -16,14 +17,13 @@ export const windowTheme = ref<AppTheme>(null);
  * **make sure call this only once**
  */
 export async function initTheme() {
-  // 初始化os主题状态
-  windowTheme.value = await getCurrentWindow().theme();
-  
-  // 读取用户保存的配置
+  // 读取配置
   const savedTheme = await store.get<AppTheme>("theme");
   const useTheme = savedTheme ?? null; // 没有则为跟随系统
   
   await setAppTheme(useTheme);
+  // 启动时同步窗口主题
+  windowTheme.value = await getCurrentWindow().theme();
   
   // 监听系统主题
   await getCurrentWindow().onThemeChanged(({ payload: theme }) => {
@@ -44,9 +44,9 @@ export async function initTheme() {
  * @param theme 
  */
 export async function setAppTheme(theme: AppTheme) {
-  // sync window theme
-  await getCurrentWindow().setTheme(theme);
   appTheme.value = theme;
-  
   info("set app theme: " + theme);
+  
+  // sync app theme
+  await setTheme(theme);
 }
