@@ -1,5 +1,5 @@
 [package]
-name = "genshin_record_assistant"
+name = "genshin-record-assistant"
 version = "0.1.0"
 description = "A Tauri App"
 authors = ["you"]
