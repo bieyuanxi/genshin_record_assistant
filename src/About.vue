@@ -40,6 +40,7 @@ async function greet() {
         {{ `os info: ${osInfo.platform}, ${osInfo.arch}, ${osInfo.version}` }}
     </p>
     <p>{{ `app version: ${appInfo.version}` }}</p>
+    <p>{{ `tauri version: ${appInfo.tauriVersion}` }}</p>
 </template>
 
 <style scoped>
