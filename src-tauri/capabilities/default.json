@@ -12,6 +12,7 @@
     "os:default",
     "log:default",
     "store:default",
-    "core:app:allow-set-app-theme"
+    "core:app:allow-set-app-theme",
+    "core:window:allow-show"
   ]
 }

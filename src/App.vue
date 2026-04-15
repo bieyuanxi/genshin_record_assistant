@@ -12,16 +12,30 @@ import {
     NMenu,
 } from "naive-ui";
 
-import { h, computed } from "vue";
+import { h, computed, onMounted } from "vue";
 import type { Component } from "vue";
 import {
     BookOutline as BookIcon,
     PersonOutline as PersonIcon,
     WineOutline as WineIcon,
 } from "@vicons/ionicons5";
+import { getCurrentWindow } from "@tauri-apps/api/window";
 import Settings from "./Settings.vue";
 import About from "./About.vue";
 import { windowTheme } from "./utils/theme";
+import { info } from "@tauri-apps/plugin-log";
+
+// It's embarrassing showing a blank window before pages are mounted.
+// To improve this, we make windows invisible at first(in tauri.conf.json), 
+// then show the window on mounted.
+// 
+// https://cn.vuejs.org/guide/essentials/lifecycle
+// 
+// Permission `core:window:allow-show` is needed.
+onMounted(async () => {
+  await getCurrentWindow().show();
+  info("show current window");
+});
 
 function renderIcon(icon: Component) {
     return () => h(NIcon, null, { default: () => h(icon) });

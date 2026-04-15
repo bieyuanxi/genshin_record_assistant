@@ -15,6 +15,7 @@
         "title": "genshin-record-assistant",
         "width": 800,
         "height": 600,
+        "visible": false,
         "backgroundColor": "#2f2f2f"
       }
     ],
